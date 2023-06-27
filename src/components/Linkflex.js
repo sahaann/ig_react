@@ -1,3 +1,8 @@
 import React from "react";
-const Linkflex = (props) => <p className="link-text">{props.linktext}</p>;
+const Linkflex = (props) => (
+  <>
+    {props.icon}
+    <p className="link-text">{props.linktext}</p>
+  </>
+);
 export default Linkflex;

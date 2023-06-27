@@ -2,15 +2,17 @@ import React, { useEffect, useState } from "react";
 import Userpfp from "../assets/User.jpeg";
 const Post = () => {
   const [data, setData] = useState([]);
-  fetch("https://jsonplaceholder.typicode.com/photos")
-    .then((response) => response.json())
-    .then((json) => {
-      // console.log(json);
-      setData(json);
-    });
+  useEffect(() => {
+    fetch("https://jsonplaceholder.typicode.com/photos")
+      .then((response) => response.json())
+      .then((json) => {
+        // console.log(json);
+        setData(json);
+      });
+  }, []);
   return (
     <div>
-      {data.map((item) => (
+      {data.slice(0, 100).map((item) => (
         <div className="post">
           <header>
             <img

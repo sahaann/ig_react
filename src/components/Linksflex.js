@@ -1,29 +1,33 @@
 import React from "react";
 import Linkflex from "./Linkflex";
-import Create from "../assets/create.svg";
-import Explore from "../assets/explore.svg";
-import Messages from "../assets/messages.svg";
-import Notification from "../assets/notifications.svg";
-import Reels from "../assets/reels.svg";
-import Search from "../assets/search.svg";
-
+import CreateIcon from "./icons/CreateIcon";
+import HomeIcon from "./icons/HomeIcon";
+import SearchIcon from "./icons/SearchIcon";
+import ExploreIcon from "./icons/ExploreIcon";
+import MessagesIcon from "./icons/MessagesIcon";
+import NotificationIcon from "./icons/NotificationIcon";
+import ProfileIcon from "./icons/ProfileIcon";
 const Linksflex = (props) => {
   const linkflex = [
-    { linktext: "Home" },
-    { linktext: "Search" },
+    { linktext: "Home", icon: <HomeIcon /> },
+    { linktext: "Search", icon: <SearchIcon /> },
     {
       linktext: "Explore",
+      icon: <ExploreIcon />,
     },
     {
       linktext: "Messages",
+      icon: <MessagesIcon />,
     },
     {
       linktext: "Notification",
+      icon: <NotificationIcon />,
     },
     {
       linktext: "Create",
+      icon: <CreateIcon />,
     },
-    { linktext: "Profile" },
+    { linktext: "Profile", icon: <ProfileIcon /> },
   ];
   return (
     <div className="links-flex">
@@ -41,9 +45,9 @@ const Linksflex = (props) => {
           </svg>
         </a>
       </div>
-      {linkflex.map((linktext) => (
+      {linkflex.map((item) => (
         <div className="link-flex">
-          <Linkflex linktext={linktext.linktext} />
+          <Linkflex linktext={item.linktext} icon={item.icon} />
         </div>
       ))}
     </div>
